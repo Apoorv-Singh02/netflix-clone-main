@@ -11,7 +11,7 @@ import {
 import LoginScreen from './screens/LoginScreen';
 
 function App() {
-  const user = 1;
+  const user = null;
 
   return (
 

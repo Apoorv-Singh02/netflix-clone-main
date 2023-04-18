@@ -116,5 +116,11 @@
 }
 
 .input:focus {
-    border: 1px solid transparent;
+    border: 0px solid;
+    border-color: transparent;
+    line-height: 2.6rem;
+    font-size: large;
+    width: 60%;
+    padding-left: 1.2rem;
+    outline: none;
 }

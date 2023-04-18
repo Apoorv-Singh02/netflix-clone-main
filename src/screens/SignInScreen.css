@@ -1,0 +1,48 @@
+.sign_screen {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+
+.sign_body {
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 5%;
+}
+
+.form-signin {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-sign {
+    padding-left: 15px;
+    width: 90%;
+    margin-top: 1rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    font-size: large;
+    font-weight: bold;
+}
+
+.btn-sign {
+    padding: 0.9rem 1.4rem;
+    color: white;
+    background-color:red;
+    border: none;
+    margin-bottom: 4rem;
+}
