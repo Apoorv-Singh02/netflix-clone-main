@@ -20,7 +20,7 @@ function LoginScreen() {
           <h1>Unlimited Films, TV Shows and more</h1>
           <h2>Watch anywhere, Cancel any time</h2>
           <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
-          <form className="form" onsubmit={(e) => {
+          <form className="form" onSubmit={(e) => {
             e.preventDefault();
 
           } }>

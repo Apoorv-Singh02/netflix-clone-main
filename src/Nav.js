@@ -1,8 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import { auth } from './firebase';
+import { signOut } from 'firebase/auth';
 import './Nav.css'
 
 function Nav() {
     const [show,handleShow]=useState(false);
+
+    const handleSignOut = () => {
+        signOut(auth).then(() => {
+            console.log("Sign-out successful.")
+          }).catch((error) => {
+            console.log(error)
+          });
+          
+    }
 
     const transitionNavbar = () => {
         if (window.scrollY > 100) {
@@ -27,7 +38,7 @@ function Nav() {
 
         <img className="nav_avatar" 
         src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" 
-        alt="avatar" />
+        alt="avatar" onClick={handleSignOut}/>
         </div>
     </div>
 

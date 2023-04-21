@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
 import {
@@ -9,9 +9,21 @@ import {
   Routes
 } from "react-router-dom";
 import LoginScreen from './screens/LoginScreen';
+import { auth } from './firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+
 
 function App() {
-  const user = null;
+  const [user,setuser] = useState(null);
+
+  onAuthStateChanged(auth, (usr) => {
+    if (usr) {
+      setuser(usr)
+    } else {
+      console.log(usr)
+      setuser(null)
+    }
+  });
 
   return (
 
