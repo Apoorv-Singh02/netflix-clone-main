@@ -46,3 +46,11 @@
     border: none;
     margin-bottom: 4rem;
 }
+
+.signup-btn {
+    text-decoration: underline;
+}
+
+.signup-btn:hover {
+    cursor: pointer;
+}

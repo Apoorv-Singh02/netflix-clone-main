@@ -38,7 +38,9 @@ function SignInScreen() {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(error.message)
-        seterr(error.message);
+        const str=error.message;
+        const after = str.slice(str.indexOf('/')+1,str.indexOf(')'))
+        seterr(after)
       });
 
     setEmail("")
@@ -58,7 +60,7 @@ function SignInScreen() {
           <button type="submit" className="btn-sign">Sign In</button>
           {err.length > 0 && <div>{err}</div>}
         </form>
-        <h3>Don't have a account yet?<span onClick={handleSignUp}>Sign Up Now</span></h3>
+        <h3>Don't have a account yet?<span className='signup-btn' onClick={handleSignUp}>Sign Up Now</span></h3>
       </div>
     </div>
   )
