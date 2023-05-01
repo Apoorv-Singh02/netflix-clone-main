@@ -3,17 +3,20 @@ import './SignInScreen.css'
 import { initializeApp } from "firebase/app";
 import { auth } from '../firebase.js';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { login , logout } from '../features/counter/userSlice';
 
 function SignInScreen() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [err, seterr] = useState("")
+  const dispatch = useDispatch()
 
   const handleSignUp = (e) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
-        console.log(userCredential.user);
+        dispatch(login(userCredential))
         // ...
       })
       .catch((error) => {
@@ -31,7 +34,7 @@ function SignInScreen() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
-        console.log(userCredential.user);
+        dispatch(login(userCredential))
         // ...
       })
       .catch((error) => {
